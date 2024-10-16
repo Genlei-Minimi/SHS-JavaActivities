@@ -1,0 +1,175 @@
+import java.util.*;
+
+ // Compiler version JDK 11.0.2
+
+ class Dcoder
+ {
+   public static void main(String args[])
+   { 
+    
+     int ID;
+     double rSalary, wkSalary, nSalary, hour, OT, rPay, oPay;
+     int wkTime = 300;
+     int hsr;
+     String[] eName = {"Minimirito, Genlei C.", "Ortiz, Gab T.",
+     "Barroso, Beatrice A.", "Nebreja, Abby R.", "Abawag, Carlo, C."};
+     String[] stats = {"Regular", "Part-time"};
+     String statusR = stats[0];
+     String statusP = stats[1];
+     String statsA = statusP;
+     int[] eID = {1001, 1002, 1003, 1004, 1005};
+     
+     Scanner scanner = new Scanner(System.in);
+     Scanner hsrscanner = new Scanner(System.in);
+    
+    System.out.println("-------------------------");
+    System.out.println(" WEEKLY PAYROLL SALARY ");
+    System.out.println("-------------------------");
+  // Employee ID Input
+    System.out.print("Enter Employee ID (0000):");
+    ID = scanner.nextInt();
+    
+    
+    // if ID is 1001 then array[0] will show
+    if (ID == 1001){
+
+    System.out.println("Employee ID: " + eID[0] + "\n Employee Name: " + eName[0]);
+  //if the status is statusR then it's Regular
+    statusR = stats[0];
+    System.out.println("Status: " + statusR);
+       System.out.println("-------------------------");
+       
+    }
+// if ID is 1002 then array[1] will show
+ else if (ID == 1002){
+   System.out.println("Employee ID: " + eID[1] + "\n Employee Name: " + eName[1]);
+  //if the status is statusP then it's Part-time
+   statusP = stats[1];
+    System.out.println("Status: " + statusP);
+   
+ }
+ // if ID is 1003 then array[2] will show
+ else if (ID == 1003){
+   System.out.println("Employee ID: " + eID[2] + "\n Employee Name: " + eName[2]);
+    //if the status is statusP then it's Part-time
+  statusP = stats[1];
+    System.out.println("Status: " + statusP);
+   }
+   // if ID is 1004 then array[3] will show
+   else if (ID == 1004){
+   System.out.println("Employee ID: " + eID[3] + "\n Employee Name: " + eName[3]);
+  //if the status is statusR then it's Regular
+ statusR = stats[0];
+    System.out.println("Status: " + statusR);
+   }
+   
+   // if ID is 1005 then array[4] will show
+   else if (ID == 1005){
+   System.out.println("Employee ID: " + eID[4] + "\n Employee Name: " + eName[4]);
+    //if the status is statusR then it's Regular
+   statusR = stats[0];
+    System.out.println("Status: " + statusR);
+    
+   }
+   // else it will show a notice and close the program
+   else {
+     System.out.println("UNKNOWN EMPLOYEE: The employee number is \nnot found in the database");
+  System.exit(0);} 
+   
+  // if statusR it will identify the client as Regular
+  
+  if(statusR.equals(stats[0])){
+    System.out.println("Please Enter the Hour Spent in Work: ");
+  hour = scanner.nextInt();
+ 
+ //if hour is less than 30 then it will show the salary without overtime
+  if(hour < 30){    
+  wkSalary = wkTime;
+  oPay = 0;
+   rSalary = hour * wkTime;
+   nSalary = rSalary;
+   
+    System.out.println("-------------------------");
+  System.out.println("   PAYROLL INFORMATION   ");
+ System.out.println("-------------------------");
+System.out.println("Regular Salary Rate per Hour: " + wkTime);
+System.out.println("Regular Pay: " + rSalary);
+System.out.println("Overtime Pay: 0");
+System.out.println("Net Salary: " + nSalary);
+  }
+  //if hour is greater than or equal to 40 
+   //then it will show the salary + the overtime pay  
+  else if(hour >=40){
+  
+  System.out.println("Please Enter the Overtime Spent in Work: ");
+  OT = scanner.nextInt();
+    wkSalary = wkTime;
+    oPay = (wkTime * 0.8) * OT;
+    rSalary = hour * wkTime;
+    nSalary = rSalary + oPay;
+   
+    System.out.println("-------------------------");
+  System.out.println("   PAYROLL INFORMATION   ");
+ System.out.println("-------------------------");
+System.out.println("Regular Salary Rate per Hour: " + wkTime);
+System.out.println("Regular Pay: " + rSalary);
+System.out.println("Overtime Pay: " + oPay);
+System.out.println("-------------------------");
+System.out.println("Net Salary: " + nSalary);
+System.out.println("-------------------------");
+  System.exit(0);}
+  
+ System.exit(0);}
+ 
+  // if statusP it will identify the client as Part-time
+  
+ if(statusP.equals(stats[1])){
+   System.out.println("Please Enter the Hourly Salary Rate: ");
+   hsr = hsrscanner.nextInt();
+    System.out.println("Please Enter the Hour Spent in Work: ");
+    hour = scanner.nextInt();
+     // if hsr is greater than or equal 300 it will show a notice
+     if(hsr >= 300){ System.out.print("“Please use a lower salary rate than the Regular Employee Rate(300.00)");
+   //if hour is less than 30 then it will show the salary without overtime  
+  if(hour < 30){    
+  wkSalary = wkTime;
+  oPay = 0;
+   rSalary = hsr * hour;
+   nSalary = rSalary;
+   
+    System.out.println("-------------------------");
+  System.out.println("   PAYROLL INFORMATION   ");
+ System.out.println("-------------------------");
+System.out.println("Regular Salary Rate per Hour: " + hour);
+System.out.println("Regular Pay: " + rSalary);
+System.out.println("Overtime Pay: 0");
+System.out.println("Net Salary: " + nSalary);
+  }
+  //if hour is greater than or equal to 40 
+   //then it will show the salary + the overtime pay
+   
+  else if(hour >=40){
+  
+  System.out.println("Please Enter the Overtime Spent in Work: ");
+  OT = scanner.nextInt();
+    wkSalary = wkTime;
+    oPay = (hsr * 0.8) * OT;
+    rSalary = hsr * wkTime;
+    nSalary = rSalary + oPay;
+   
+    System.out.println("-------------------------");
+  System.out.println("   PAYROLL INFORMATION   ");
+ System.out.println("-------------------------");
+System.out.println("Regular Salary Rate per Hour: " + wkTime);
+System.out.println("Regular Pay: " + rSalary);
+System.out.println("Overtime Pay: " + oPay);
+System.out.println("-------------------------");
+System.out.println("Net Salary: " + nSalary);
+System.out.println("-------------------------");
+  }
+  }   
+    
+   
+ }
+  } 
+  }
