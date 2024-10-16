@@ -1,0 +1,92 @@
+import java.util.*;
+
+public class javaGradeAverageProgram
+{
+    public static void main(String args[])
+    {
+     
+        int Mid1, Mid2, Mid3, Mid4;
+        int Fin1, Fin2, Fin3, Fin4;
+        float FRating1, FRating2, FRating3, FRating4;
+        float GWA;
+        Scanner scanner = new Scanner(System.in);
+    //to calculate the First Subject's Final Rating
+       System.out.print("----------------\n Student Remarks\n----------------\n");
+       System.out.println("MAJOR");
+           System.out.print("Midterm: ");
+           Mid1 = scanner.nextInt();
+           System.out.print("Finals: ");
+           Fin1 = scanner.nextInt();
+           FRating1 = (Mid1 + Fin1) / 2;
+           System.out.println("FRatings: " + FRating1);
+           
+          //to calculate the Second Subject's Final Rating 
+           System.out.println("RESEARCH\n-----------------");
+           System.out.print("Midterm: ");
+           Mid2 = scanner.nextInt();
+           System.out.print("Finals: ");
+           Fin2 = scanner.nextInt();
+           FRating2 = (Mid2 + Fin2) / 2;
+           System.out.println("FRatings: " + FRating2);
+          
+           //to calculate the Third Subject's Final Rating
+           System.out.println("MATH\n----------------");
+           System.out.print("Midterm: ");
+           Mid3 = scanner.nextInt();
+           System.out.print("Finals: ");
+           Fin3 = scanner.nextInt();
+           FRating3 =(Mid3 + Fin3) /2;
+           System.out.println("FRatings: " + FRating3);
+           
+           //to calculate the Fourth Subject's Final Rating
+           System.out.println("IMMERSION\n----------------");
+           System.out.print("Midterm: ");
+           Mid4 = scanner.nextInt();
+           System.out.print("Finals: ");
+           Fin4 = scanner.nextInt();
+           FRating4 = (Mid4 + Fin4) / 2;
+           System.out.println("FRatings: " + FRating4);
+         
+           //to calculate the Overall Grades
+           GWA = (FRating1 + FRating2 + FRating3 + FRating4) / 4;
+           System.out.println("GWA:" + GWA);
+          
+           scanner.close();
+     //to calculate if the grades is invalid
+        System.out.print("Remarks: ");
+       
+       //to calculate if the grades is invalid
+        if(GWA>100)
+        {
+            System.out.print("Invalid Grades");
+        }
+        
+        //to calculate if the grades is valid for with highest honors
+        else if(GWA>=98 && GWA<100)
+        {
+           System.out.print("With Highest Honors");
+        } 
+        
+        //to calculate if the grades is valid for with high honors
+        else if(GWA>=95 && GWA<97.99)
+        {
+            System.out.print("With High Honors");
+        }
+        //to calculate if the grades is valid for with honors
+        else if(GWA>=90 && GWA<94.99)
+        {
+            System.out.print("With Honors");
+        }
+       //to calculate if the grades is passed
+        else if(GWA>=75 && GWA<89.99)
+        {
+            System.out.print("Passed");
+        }
+        //to calculate if the grades is failed
+        else if(GWA<75)
+        {
+            System.out.print("Failed");
+        }      
+        
+       }
+    }
